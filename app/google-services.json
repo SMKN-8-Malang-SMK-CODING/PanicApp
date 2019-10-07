@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "20798735598",
+    "firebase_url": "https://panicapp-1fdf2.firebaseio.com",
+    "project_id": "panicapp-1fdf2",
+    "storage_bucket": "panicapp-1fdf2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:20798735598:android:2986738db8337feb519fff",
+        "android_client_info": {
+          "package_name": "com.panic.panicapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "20798735598-le5uv812e5mikoufqi347ae9vnvi365t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.panic.panicapp",
+            "certificate_hash": "86691f009db0d7da760573c6447c1ae7ef4ecaed"
+          }
+        },
+        {
+          "client_id": "20798735598-c34qvks1m99kkc8sgqdckoha3vsftv88.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMHqNdlBn2ySenZaMam0R-g_6HR9hyynE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "20798735598-c34qvks1m99kkc8sgqdckoha3vsftv88.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
