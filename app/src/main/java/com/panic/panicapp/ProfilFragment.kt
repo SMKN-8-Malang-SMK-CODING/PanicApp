@@ -47,9 +47,9 @@ class ProfilFragment : Fragment() {
         user.add(dataList("Kebakaran","Anjab Abdullah","Jl.Pakisjajar Tengah"))
         user.add(dataList("Kebakaran","Felic Zevana","Jl.Ciliwung"))
 
-        MyRecyclerView.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+        myRecyclerView.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         val myAdapter = SlideInBottomAnimationAdapter(MyRecyclerAdapter(user))
-        MyRecyclerView.adapter = ScaleInAnimationAdapter(myAdapter).apply{
+        myRecyclerView.adapter = ScaleInAnimationAdapter(myAdapter).apply{
             setFirstOnly(false)
         }
 

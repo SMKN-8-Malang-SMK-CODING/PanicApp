@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="230dp" >
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/splash_panic" />
+
+        <Button
+            android:id="@+id/btnRetry"
+            android:layout_marginTop="30dp"
+            android:layout_width="200dp"
+            android:text="Retry"
+            android:paddingBottom="10dp"
+            android:background="@drawable/btn_accent"
+            android:layout_height="55dp">
+
+        </Button>
+
+    </LinearLayout>
+
+
+</LinearLayout>

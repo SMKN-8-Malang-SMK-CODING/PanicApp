@@ -1,12 +1,15 @@
 package com.panic.panicapp
 
+import android.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.widget.Toast
 
 import kotlinx.android.synthetic.main.activity_main.*
-
-
+import kotlinx.android.synthetic.main.dialog_kebakaran.view.*
+import kotlinx.android.synthetic.main.login_dialog.view.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -18,8 +21,8 @@ class MainActivity : AppCompatActivity() {
 
 
             btnLogin.setOnClickListener{
-                val username = edtUsername.text
-                val password = edtPassword.text
+                val username = edtUsername.text.toString()
+                val password = edtPassword.text.toString()
                 val intent = Intent(this, Beranda::class.java)
 
                 if (username.isEmpty()){
@@ -28,9 +31,40 @@ class MainActivity : AppCompatActivity() {
                 if (password.isEmpty()){
                     edtPassword.error = "Password Harus Diisi"
                 }
-                if (password.isNotEmpty() && username.isNotEmpty()){
+                if (password == "alvin19" && username == "alvinakbar095@gmail.com"){
                     startActivity(intent)
+
+                }else if(password == "alvin19" && username != "alvinakbar095@gmail.com"){
+
+                    val mDialogView = LayoutInflater.from(this).inflate(R.layout.login_dialog, null)
+
+                    val mBuilder = AlertDialog.Builder(this)
+                        .setView(mDialogView)
+                        .setTitle("         Email Salah       ")
+
+
+                    val mAlertDialog = mBuilder.show()
+
+                    mDialogView.btnRetry.setOnClickListener{
+                        mAlertDialog.dismiss()
+                    }
+                }else if(password != "alvin19" && username == "alvinakbar095@gmail.com"){
+
+                    val mDialogView = LayoutInflater.from(this).inflate(R.layout.login_dialog, null)
+
+                    val mBuilder = AlertDialog.Builder(this)
+                        .setView(mDialogView)
+                        .setTitle("         Password Salah       ")
+
+
+                    val mAlertDialog = mBuilder.show()
+
+                    mDialogView.btnRetry.setOnClickListener{
+                        mAlertDialog.dismiss()
+                    }
                 }
+
+
 
 
 
