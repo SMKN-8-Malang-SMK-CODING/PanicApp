@@ -31,10 +31,12 @@ class MainActivity : AppCompatActivity() {
                 if (password.isEmpty()){
                     edtPassword.error = "Password Harus Diisi"
                 }
+
+
                 if (password == "alvin19" && username == "alvinakbar095@gmail.com"){
                     startActivity(intent)
 
-                }else if(password == "alvin19" && username != "alvinakbar095@gmail.com"){
+                }else if(password == "alvin19"  && username != "alvinakbar095@gmail.com"){
 
                     val mDialogView = LayoutInflater.from(this).inflate(R.layout.login_dialog, null)
 
@@ -62,12 +64,32 @@ class MainActivity : AppCompatActivity() {
                     mDialogView.btnRetry.setOnClickListener{
                         mAlertDialog.dismiss()
                     }
+                }else if(password != "alvin19" && username != "alvinakbar095@gmail.com"){
+
+                    val mDialogView = LayoutInflater.from(this).inflate(R.layout.login_dialog, null)
+
+                    val mBuilder = AlertDialog.Builder(this)
+                        .setView(mDialogView)
+                        .setTitle("  Password Salah dan Email Salah  ")
+
+
+                    val mAlertDialog = mBuilder.show()
+
+                    mDialogView.btnRetry.setOnClickListener{
+                        mAlertDialog.dismiss()
+                    }
                 }
 
 
 
 
 
+
+            }
+
+            regText.setOnClickListener{
+                val intent = Intent(this, RegisterActivity::class.java)
+                startActivity(intent)
             }
 
     }
