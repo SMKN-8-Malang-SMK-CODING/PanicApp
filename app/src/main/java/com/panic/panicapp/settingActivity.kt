@@ -25,6 +25,10 @@ class settingActivity  : AppCompatActivity(){
             Toast.makeText(this, "Pengaturan Aplikasi", Toast.LENGTH_SHORT).show()
         }
 
+        back_setting.setOnClickListener {
+            onBackPressed()
+        }
+
     }
 
 }

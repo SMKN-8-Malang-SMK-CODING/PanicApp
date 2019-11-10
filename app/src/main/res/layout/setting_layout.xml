@@ -193,6 +193,13 @@
 
         </androidx.cardview.widget.CardView>
 
+        <ImageView
+            android:id="@+id/back_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            app:srcCompat="?attr/homeAsUpIndicator" />
+
     </FrameLayout>
 
 </LinearLayout>

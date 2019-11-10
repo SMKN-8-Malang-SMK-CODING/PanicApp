@@ -12,6 +12,7 @@ import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.dialog_kebakaran.view.*
 import kotlinx.android.synthetic.main.fragment_main.*
 
@@ -32,9 +33,18 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        settingTab.setOnClickListener {
-            val intent = Intent(context, settingActivity::class.java)
-            startActivity(intent)
+        val currentUser = FirebaseAuth.getInstance().currentUser
+
+        logoutTab.setOnClickListener {
+            if (currentUser != null){
+                FirebaseAuth.getInstance().signOut()
+                val intent = Intent(context, MainActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
+                Toast.makeText(context, "Berhasil Logout", Toast.LENGTH_SHORT).show()
+                startActivity(intent)
+                activity?.finish()
+
+            }
         }
 
         kebakaranTab.setOnClickListener {
@@ -95,7 +105,10 @@ class MainFragment : Fragment() {
             }
         }
 
-
+        foto_profil.setOnClickListener{
+            val intent = Intent(context, settingActivity::class.java)
+            startActivity(intent)
+        }
 
 
     }
