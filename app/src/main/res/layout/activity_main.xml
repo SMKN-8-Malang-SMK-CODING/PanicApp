@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:layout_below="@+id/cons"
     android:background="@color/colorAccent"
-    tools:context=".MainActivity">
+    tools:context=".Activity.mainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cons"
@@ -61,10 +61,10 @@
                 <EditText
                     android:id="@+id/edtUsername"
                     android:layout_width="320dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="75dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/username_bg"
+                    android:background="@drawable/input_username_bg"
                     android:hint="Username"
                     android:inputType="textPersonName"
                     android:paddingStart="80dp"
@@ -75,10 +75,10 @@
                 <EditText
                     android:id="@+id/edtPassword"
                     android:layout_width="320dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="75dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/password_bg"
+                    android:background="@drawable/input_password_bg"
                     android:ems="10"
                     android:hint="Password"
                     android:inputType="textPassword"
@@ -91,10 +91,14 @@
                     android:id="@+id/btnLogin"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="40dp"
                     android:layout_weight="1"
-                    android:background="@drawable/login_bg"
+                    android:text="Login"
+                    android:textSize="18dp"
+                    android:background="@drawable/orange_button"
                     android:paddingBottom="10dp"
                     android:textColor="@android:color/white" />
 

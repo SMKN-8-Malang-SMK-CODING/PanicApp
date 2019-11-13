@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@style/AppTheme.Tema"
-    tools:context=".Beranda">
+    tools:context=".Activity.berandaActivity">
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/vp_main"

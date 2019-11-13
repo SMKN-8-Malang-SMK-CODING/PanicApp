@@ -13,10 +13,11 @@
         android:roundIcon="@drawable/panic_logo_rounded"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.Tema">
-        <activity android:name=".profilUpdate"></activity>
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".Beranda" />
-        <activity android:name=".settingActivity" />
+        <activity android:name=".Activity.kejadianDetailActivity"></activity>
+        <activity android:name=".Activity.profilUpdate" />
+        <activity android:name=".Activity.registerActivity" />
+        <activity android:name=".Activity.berandaActivity" />
+        <activity android:name=".Activity.settingActivity" />
         <activity android:name=".splashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,7 +26,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".Activity.mainActivity"
             android:screenOrientation="portrait" />
     </application>
 

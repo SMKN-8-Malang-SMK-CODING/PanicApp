@@ -1,4 +1,4 @@
-package com.panic.panicapp
+package com.panic.panicapp.Function
 
 import java.text.NumberFormat
 import java.text.SimpleDateFormat

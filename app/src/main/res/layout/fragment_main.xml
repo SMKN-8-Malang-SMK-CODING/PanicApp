@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:textAlignment="center"
-    tools:context=".MainFragment">
+    tools:context=".Fragment.mainFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <FrameLayout

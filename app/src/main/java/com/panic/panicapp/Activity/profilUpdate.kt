@@ -1,4 +1,4 @@
-package com.panic.panicapp
+package com.panic.panicapp.Activity
 
 import android.app.Activity
 import android.content.Intent
@@ -6,12 +6,11 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
-import android.util.Log
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest
+import com.panic.panicapp.R
 import kotlinx.android.synthetic.main.activity_profil_update.*
-import kotlinx.android.synthetic.main.fragment_main.*
 import java.io.IOException
 
 class profilUpdate : AppCompatActivity() {
@@ -28,7 +27,7 @@ class profilUpdate : AppCompatActivity() {
         btn_submit_updates.setOnClickListener {
             val username = username_profil.text.toString()
 
-            if(username.isEmpty()) username_profil.error = "Harus Diisi"
+            if (username.isEmpty()) username_profil.error = "Harus Diisi"
 
             val profilUpdates = UserProfileChangeRequest.Builder()
                 .setDisplayName(username)
@@ -40,14 +39,14 @@ class profilUpdate : AppCompatActivity() {
             currentUser?.updateProfile(profilUpdates)
                 ?.addOnSuccessListener {
                     Toast.makeText(this, "Berhasil Update Profil", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this, Beranda::class.java)
+                    val intent = Intent(this, berandaActivity::class.java)
                     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                     startActivity(intent)
                 }
 
         }
 
-        image_profil.setOnClickListener {
+        chose_image.setOnClickListener {
             choseImage()
         }
     }
