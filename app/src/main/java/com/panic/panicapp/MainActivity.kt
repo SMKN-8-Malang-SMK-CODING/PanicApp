@@ -41,7 +41,6 @@ class MainActivity : AppCompatActivity() {
                     val username = edtUsername.text.toString()
                     val password = edtPassword.text.toString()
 
-
                     if (username.isEmpty()) {
                         edtUsername.error = "Email Harus Diisi"
                     }
@@ -54,7 +53,8 @@ class MainActivity : AppCompatActivity() {
                             mBuilder.setView(mDialogView)
                             mBuilder.setTitle("Gagal Login")
 
-                            val mAlertDialog = mBuilder.show()
+                            val mAlertDialog = mBuilder!!
+                                .show()
 
                             mDialogView.btnRetry.setOnClickListener {
                                 mAlertDialog.dismiss()
@@ -63,14 +63,9 @@ class MainActivity : AppCompatActivity() {
                             moveToBeranda()
                         }
                     }.addOnFailureListener {
-                        mBuilder.setView(mDialogView)
-                        mBuilder.setTitle("Gagal Login ${it.message}")
+                        Toast.makeText(this, "Gagal Login ${it.message}", Toast.LENGTH_SHORT).show()
 
-                        val mAlertDialog = mBuilder.show()
-
-                        mDialogView.btnRetry.setOnClickListener {
-                            mAlertDialog.dismiss()
-                        }
+                        return@addOnFailureListener
                     }
                 }
             }

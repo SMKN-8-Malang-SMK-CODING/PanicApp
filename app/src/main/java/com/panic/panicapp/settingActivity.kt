@@ -1,5 +1,6 @@
 package com.panic.panicapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.widget.Toast
@@ -12,8 +13,9 @@ class settingActivity  : AppCompatActivity(){
         setContentView(R.layout.setting_layout)
 
 
-        profilEdit!!.setOnClickListener{
-            Toast.makeText(this, "Edit profile", Toast.LENGTH_SHORT).show()
+        profilEdit.setOnClickListener{
+            val intent = Intent(this, profilUpdate::class.java)
+            startActivity(intent)
         }
         bantuanApp.setOnClickListener{
             Toast.makeText(this, "Bantuan Aplikasi", Toast.LENGTH_SHORT).show()

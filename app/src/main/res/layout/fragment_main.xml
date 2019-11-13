@@ -4,18 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:textAlignment="center"
     android:orientation="vertical"
+    android:textAlignment="center"
     tools:context=".MainFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:layout_marginTop="0dp"
-        android:padding="0dp"
-        >
+        android:orientation="vertical"
+        android:padding="0dp">
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -34,7 +33,7 @@
                 android:layout_gravity="center"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
-                android:elevation="10dp"
+                android:elevation="15dp"
                 android:paddingTop="90dp"
                 android:paddingBottom="20dp"
                 app:cardBackgroundColor="@color/cardview_light_background"
@@ -66,10 +65,11 @@
                     android:padding="15dp">
 
                     <TextView
+                        android:id="@+id/user_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="Alvin Ferdian Akbar"
+                        android:text="Jhon Doe"
                         android:textColor="@color/cardview_dark_background"
                         android:textSize="25dp" />
 
@@ -85,10 +85,11 @@
                             android:src="@drawable/lokasi_bg" />
 
                         <TextView
+                            android:id="@+id/lokasi_user"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="10dp"
-                            android:text="Jl.Teluk Pacitan No.1"
+                            android:text="Text"
                             android:textColor="@color/colorAccent"
                             android:textSize="18dp" />
                     </LinearLayout>
@@ -114,10 +115,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="15dp"
-                            app:cardBackgroundColor="@color/colorPrimaryDark"
+                            app:cardBackgroundColor="@color/common_google_signin_btn_text_dark_default"
                             app:cardCornerRadius="20dp"
-                            app:cardElevation="10dp"
-                            app:contentPadding="2dp">
+                            app:cardElevation="5dp">
 
                             <ImageView
                                 android:layout_width="110dp"
@@ -131,10 +131,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="15dp"
-                            app:cardBackgroundColor="@color/colorPrimaryDark"
+                            app:cardBackgroundColor="@color/common_google_signin_btn_text_dark_default"
                             app:cardCornerRadius="20dp"
-                            app:cardElevation="10dp"
-                            app:contentPadding="2dp">
+                            app:cardElevation="5dp">
 
                             <ImageView
                                 android:layout_width="110dp"
@@ -157,10 +156,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="15dp"
-                            app:cardBackgroundColor="@color/colorAccent"
+                            app:cardBackgroundColor="@color/common_google_signin_btn_text_dark_default"
                             app:cardCornerRadius="20dp"
-                            app:cardElevation="10dp"
-                            app:contentPadding="2dp">
+                            app:cardElevation="5dp">
 
                             <ImageView
                                 android:layout_width="110dp"
@@ -174,10 +172,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="15dp"
-                            app:cardBackgroundColor="@color/colorAccent"
+                            app:cardBackgroundColor="@color/common_google_signin_btn_text_dark_default"
                             app:cardCornerRadius="20dp"
-                            app:cardElevation="10dp"
-                            app:contentPadding="2dp">
+                            app:cardElevation="5dp">
 
                             <ImageView
                                 android:layout_width="110dp"
@@ -194,7 +191,6 @@
             </androidx.cardview.widget.CardView>
         </FrameLayout>
     </FrameLayout>
-
 
 
 </LinearLayout>

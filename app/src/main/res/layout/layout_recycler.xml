@@ -10,10 +10,10 @@
         android:id="@+id/kejadian_card"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20sp"
-        android:layout_marginVertical="3dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="20dp"
         android:paddingHorizontal="20dp"
-        app:cardCornerRadius="15dp"
+        app:cardCornerRadius="6dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -25,30 +25,44 @@
             android:id="@+id/txtKejadian"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:gravity="center"
             android:background="@color/colorAccent"
-            android:textColor="@color/cardview_dark_background"
+            android:gravity="center"
+            android:padding="5dp"
             android:text="Kebakaran"
+            android:textColor="@color/cardview_dark_background"
             android:textSize="20sp" />
 
-
-
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="35dp"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="83dp">
         <TextView
             android:id="@+id/txtNama"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="45dp"
+            android:layout_marginStart="40dp"
             android:text="Alvin Ferdian Akbar"
             android:textSize="20sp" />
+            <TextView
+                android:id="@+id/txtTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:text="Time"
+                android:textSize="20sp" />
+        </LinearLayout>
 
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
             android:orientation="horizontal"
             android:padding="20dp"
             tools:layout_editor_absoluteX="0dp"
