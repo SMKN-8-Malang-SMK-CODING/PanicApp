@@ -17,13 +17,14 @@
     </style>
 
     <style name="CustomTab" parent="Widget.Design.TabLayout">
-        <item name="tabIndicatorColor">@color/colorPrimary</item>
+        <item name="tabIndicatorColor">@android:color/white</item>
         <item name="tabRippleColor">@color/colorPrimary</item>
         <item name="tabIndicatorHeight">3dp</item>
         <item name="tabBackground">@color/myColor</item>
         <item name="tabSelectedTextColor">@color/cardview_light_background</item>
         <item name="tabTextAppearance">@color/cardview_light_background</item>
         <item name="tabIndicatorGravity">@android:integer/config_shortAnimTime</item>
+        <item name="tabIconTint">@color/cardview_light_background</item>
 
 
     </style>

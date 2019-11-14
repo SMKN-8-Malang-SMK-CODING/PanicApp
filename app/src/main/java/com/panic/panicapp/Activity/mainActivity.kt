@@ -57,11 +57,11 @@ class mainActivity : AppCompatActivity() {
 
                 try {
                     auth.signInWithEmailAndPassword(username, password).addOnSuccessListener {
+                        moveToBeranda()
 
                         load_backLogin.visibility = View.GONE
                         load_login.visibility = View.GONE
 
-                        moveToBeranda()
                     }.addOnFailureListener {
                         load_backLogin.visibility = View.GONE
                         load_login.visibility = View.GONE

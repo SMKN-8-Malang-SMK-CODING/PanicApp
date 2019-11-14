@@ -40,12 +40,6 @@ class newsFragment : Fragment() {
 
         val laporan = db.collection("laporan")
 
-        if (spiner_sortir.selectedItem.toString() == "jenis") db.collection("laporan")
-            .orderBy("jenis_laporan")
-        if (spiner_sortir.selectedItem.toString() == "nama_pelapor") db.collection("laporan")
-            .orderBy("nama_pelapor")
-        if (spiner_sortir.selectedItem.toString() == "lokasi") db.collection("laporan")
-            .orderBy("lokasi")
 
         myRecyclerView.apply {
             layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)

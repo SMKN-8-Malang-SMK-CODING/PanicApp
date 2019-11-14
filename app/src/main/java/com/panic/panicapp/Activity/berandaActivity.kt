@@ -29,8 +29,8 @@ class berandaActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        tab_main.getTabAt(0)!!.setIcon(R.drawable.bg_1)
-        tab_main.getTabAt(1)!!.setIcon(R.drawable.bg_2)
+        tab_main.getTabAt(0)!!.setIcon(R.drawable.home_icon)
+        tab_main.getTabAt(1)!!.setIcon(R.drawable.laporan_icon)
 
 
     }

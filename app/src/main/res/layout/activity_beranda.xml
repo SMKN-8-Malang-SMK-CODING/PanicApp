@@ -16,14 +16,15 @@
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab_main"
+            app:tabIconTint="@color/cardview_light_background"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:background="@color/myColor"
             android:foregroundGravity="top"
             android:theme="@style/CustomTab"
             app:tabBackground="@color/myColor"
-            app:tabIndicator="@android:color/transparent"
-            app:tabIndicatorColor="@color/myColor" />
+            app:tabIndicator="@android:color/white"
+            app:tabIndicatorColor="@android:color/white" />
 
 
     </androidx.viewpager.widget.ViewPager>
