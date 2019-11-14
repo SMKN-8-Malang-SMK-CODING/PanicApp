@@ -5,12 +5,12 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/myColor</item>
     </style>
 
     <style name="AppTheme.Tema">
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <item name="android:statusBarColor">@color/colorAccent</item>
+        <item name="android:statusBarColor">@color/myColor</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:windowLightStatusBar">true</item>
@@ -20,7 +20,7 @@
         <item name="tabIndicatorColor">@color/colorPrimary</item>
         <item name="tabRippleColor">@color/colorPrimary</item>
         <item name="tabIndicatorHeight">3dp</item>
-        <item name="tabBackground">@color/colorAccent</item>
+        <item name="tabBackground">@color/myColor</item>
         <item name="tabSelectedTextColor">@color/cardview_light_background</item>
         <item name="tabTextAppearance">@color/cardview_light_background</item>
         <item name="tabIndicatorGravity">@android:integer/config_shortAnimTime</item>

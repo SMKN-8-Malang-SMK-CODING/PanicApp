@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.panic.panicapp.Databases.dataList
 import com.panic.panicapp.Function.NumberFormatter
@@ -49,6 +50,7 @@ class MyRecyclerAdapter :
         val textViewNama: TextView = itemView.txtNama
         val textViewAlamat: TextView = itemView.txtAlamat
         val textViewTime: TextView = itemView.txtTime
+
     }
 
 

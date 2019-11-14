@@ -90,7 +90,7 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="10dp"
                             android:text="Text"
-                            android:textColor="@color/colorAccent"
+                            android:textColor="@color/myColor"
                             android:textSize="18dp" />
                     </LinearLayout>
                 </LinearLayout>

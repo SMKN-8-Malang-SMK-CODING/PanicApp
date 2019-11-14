@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
 import android.widget.Toast
+import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthException
 import com.google.firebase.auth.UserProfileChangeRequest
 import com.panic.panicapp.R
 import kotlinx.android.synthetic.main.activity_register.*
@@ -37,7 +39,10 @@ class registerActivity : AppCompatActivity() {
                     val currentUser = auth.currentUser
 
                     val profileUpdate =
-                        UserProfileChangeRequest.Builder().setDisplayName(username).build()
+                        UserProfileChangeRequest.Builder()
+                            .setDisplayName(username)
+                            .build()
+
 
                     currentUser?.updateProfile(profileUpdate)?.addOnSuccessListener {
                         Toast.makeText(this, "Hi! $username", Toast.LENGTH_SHORT).show()
@@ -52,6 +57,7 @@ class registerActivity : AppCompatActivity() {
                     }
                 }
             }.addOnFailureListener {
+                FirebaseException("Throwable")
                 Toast.makeText(this, "${it.message}", Toast.LENGTH_SHORT).show()
             }
 

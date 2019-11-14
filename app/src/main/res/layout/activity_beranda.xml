@@ -18,12 +18,12 @@
             android:id="@+id/tab_main"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorAccent"
+            android:background="@color/myColor"
             android:foregroundGravity="top"
             android:theme="@style/CustomTab"
-            app:tabBackground="@color/colorAccent"
+            app:tabBackground="@color/myColor"
             app:tabIndicator="@android:color/transparent"
-            app:tabIndicatorColor="@color/colorAccent" />
+            app:tabIndicatorColor="@color/myColor" />
 
 
     </androidx.viewpager.widget.ViewPager>

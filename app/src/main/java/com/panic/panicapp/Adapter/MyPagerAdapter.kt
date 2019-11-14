@@ -6,9 +6,9 @@ import androidx.fragment.app.FragmentPagerAdapter
 import com.panic.panicapp.Fragment.mainFragment
 import com.panic.panicapp.Fragment.newsFragment
 
+
 @Suppress("DEPRECATION")
 class MyPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
-
 
     private val pages = listOf(
         mainFragment(),
@@ -23,9 +23,10 @@ class MyPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
         return pages.size
     }
 
+
     override fun getPageTitle(position: Int): CharSequence? {
         return when (position) {
-            0 -> "Home"
+            0 -> "Beranda"
             else -> "News"
         }
     }

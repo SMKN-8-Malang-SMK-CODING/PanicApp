@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_below="@+id/constrain"
-    android:background="@color/colorAccent"
+    android:background="@color/myColor"
     tools:context=".Activity.registerActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constrain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
+        android:background="@color/myColor"
         android:minWidth="600dp"
         android:theme="@style/AppTheme.Tema">
 
@@ -68,7 +68,7 @@
                     android:inputType="textPersonName"
                     android:paddingStart="80dp"
                     android:paddingBottom="5dp"
-                    android:textColorHint="@color/colorAccent" />
+                    android:textColorHint="@color/myColor" />
 
                 <EditText
                     android:id="@+id/regEmail"
@@ -81,7 +81,7 @@
                     android:inputType="textEmailAddress"
                     android:paddingStart="80dp"
                     android:paddingBottom="5dp"
-                    android:textColorHint="@color/colorAccent" />
+                    android:textColorHint="@color/myColor" />
 
                 <EditText
                     android:id="@+id/regHp"
@@ -94,7 +94,7 @@
                     android:inputType="phone"
                     android:paddingStart="80dp"
                     android:paddingBottom="5dp"
-                    android:textColorHint="@color/colorAccent" />
+                    android:textColorHint="@color/myColor" />
 
 
                 <EditText
@@ -109,7 +109,7 @@
                     android:inputType="textPassword"
                     android:paddingStart="80dp"
                     android:paddingBottom="5dp"
-                    android:textColorHint="@color/colorAccent" />
+                    android:textColorHint="@color/myColor" />
 
 
                 <Button
