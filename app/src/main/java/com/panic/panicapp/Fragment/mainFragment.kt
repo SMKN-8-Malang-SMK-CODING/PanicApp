@@ -1,5 +1,6 @@
 package com.panic.panicapp.Fragment
 
+import android.animation.ObjectAnimator
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
@@ -8,14 +9,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationCallback
+import com.google.common.collect.ComparisonChain.start
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.panic.panicapp.Activity.mainActivity
+import com.panic.panicapp.Activity.profilUpdate
 import com.panic.panicapp.Activity.settingActivity
 import com.panic.panicapp.Databases.addLaporan
 import com.panic.panicapp.R
+import kotlinx.android.synthetic.main.dialog_kebakaran.*
 import kotlinx.android.synthetic.main.dialog_kebakaran.view.*
 import kotlinx.android.synthetic.main.fragment_main.*
 import kotlinx.android.synthetic.main.laporan_dialog.view.*
@@ -26,6 +32,7 @@ import kotlinx.android.synthetic.main.laporan_dialog.view.*
  */
 class mainFragment : Fragment() {
 
+    private val currentUser = FirebaseAuth.getInstance().currentUser
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -34,14 +41,59 @@ class mainFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_main, container, false)
     }
 
-    private lateinit var fusedLocationClient: FusedLocationProviderClient
-    private lateinit var locationCallback: LocationCallback
     val db = FirebaseFirestore.getInstance()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val currentUser = FirebaseAuth.getInstance().currentUser
+        foto_profil.setOnClickListener {
+
+            side_bar_menu.animate().apply {
+                duration = 2000
+                x(0f)
+                y(0f)
+                alpha(1f)
+                start()
+            }
+
+            side_bar_menu.visibility = View.VISIBLE
+
+            close_side_menu.setOnClickListener {
+                side_bar_menu.visibility = View.GONE
+
+                side_bar_menu.animate().apply {
+                    duration = 2000
+                    x(-100f)
+                    y(0f)
+                    alpha(0.6f)
+                    start()
+                }
+
+            }
+
+            menu_utama.setOnClickListener {
+                side_bar_menu.visibility = View.GONE
+            }
+
+            edt_profil.setOnClickListener {
+                side_bar_menu.visibility = View.GONE
+                side_bar_menu.animate().apply {
+                    duration = 2000
+                    x(-100f)
+                    y(0f)
+                    alpha(0.6f)
+                    start()
+                }
+
+
+                val intent = Intent(context, profilUpdate::class.java)
+                startActivity(intent)
+            }
+        }
+
+
+
         user_name.text = currentUser?.displayName.toString()
+        Glide.with(context).load(currentUser?.photoUrl).apply(RequestOptions()).into(foto_profil)
 
 
 
@@ -66,18 +118,14 @@ class mainFragment : Fragment() {
             alertLaporan("Kriminalitas")
 
         }
-        foto_profil.setOnClickListener {
-            val intent = Intent(context, settingActivity::class.java)
-            startActivity(intent)
-        }
     }
 
     private fun alertLaporan(judul: String) {
         val mDialogView = LayoutInflater.from(context).inflate(R.layout.dialog_kebakaran, null)
 
+
         val mBuilder = AlertDialog.Builder(this.context)
             .setView(mDialogView)
-            .setTitle(judul)
 
 
         val mAlertDialog = mBuilder.show()

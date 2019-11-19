@@ -12,19 +12,11 @@ class settingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.setting_layout)
 
-
-        profilEdit.setOnClickListener {
-            val intent = Intent(this, profilUpdate::class.java)
-            startActivity(intent)
-        }
         bantuanApp.setOnClickListener {
             Toast.makeText(this, "Bantuan Aplikasi", Toast.LENGTH_SHORT).show()
         }
         hubungiApp.setOnClickListener {
             Toast.makeText(this, "Hubungi Aplikasi", Toast.LENGTH_SHORT).show()
-        }
-        pengaturanApp.setOnClickListener {
-            Toast.makeText(this, "Pengaturan Aplikasi", Toast.LENGTH_SHORT).show()
         }
 
         back_setting.setOnClickListener {

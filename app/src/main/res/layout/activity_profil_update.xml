@@ -6,8 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".Activity.profilUpdate">
 
-<!--    <de.hdodenhof.circleimageview.CircleImageView-->
     <ImageView
+        android:id="@+id/back_btn_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/white_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/image_profil"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -16,8 +27,8 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.127"
-        />
+        tools:src="@drawable/bg_orang"
+        app:layout_constraintVertical_bias="0.127" />
 
     <Button
         android:id="@+id/btn_submit_updates"

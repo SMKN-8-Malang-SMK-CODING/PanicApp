@@ -15,7 +15,6 @@ import com.panic.panicapp.R
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.login_dialog.view.*
 import java.lang.IllegalStateException
-import java.lang.NullPointerException
 
 
 class mainActivity : AppCompatActivity() {
@@ -31,7 +30,6 @@ class mainActivity : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
-
 
         currentUser = auth.currentUser
         val mDialogView = LayoutInflater.from(this).inflate(R.layout.login_dialog, null)

@@ -87,11 +87,11 @@
                 <EditText
                     android:id="@+id/edtUsername"
                     android:layout_width="320dp"
-                    android:layout_height="75dp"
+                    android:layout_height="80dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/input_username_bg"
-                    android:hint="Username"
+                    android:background="@drawable/input_email_bg"
+                    android:hint="Email"
                     android:inputType="textPersonName"
                     android:paddingStart="80dp"
                     android:paddingBottom="5dp"
@@ -101,7 +101,7 @@
                 <EditText
                     android:id="@+id/edtPassword"
                     android:layout_width="320dp"
-                    android:layout_height="75dp"
+                    android:layout_height="80dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/input_password_bg"

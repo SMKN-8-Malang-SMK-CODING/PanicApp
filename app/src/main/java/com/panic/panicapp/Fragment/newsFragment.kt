@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
 import com.panic.panicapp.Databases.dataList
 import com.panic.panicapp.Adapter.MyRecyclerAdapter
 import com.panic.panicapp.R
@@ -48,13 +49,14 @@ class newsFragment : Fragment() {
             }
         }
 
+
         laporan.addSnapshotListener { _, e ->
             if (e != null) {
                 Log.w(TAG, "Listen failed.", e)
                 return@addSnapshotListener
             }
 
-            laporan.get().addOnSuccessListener {
+            laporan.orderBy("waktu",Query.Direction.DESCENDING).get().addOnSuccessListener {
                 val dataList: List<dataList> = it!!.toObjects(dataList::class.java)
 
                 myAdapter.addListUser(dataList)
