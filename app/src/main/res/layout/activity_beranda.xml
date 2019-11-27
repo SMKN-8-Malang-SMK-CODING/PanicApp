@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@style/AppTheme.Tema"
+    android:background="@drawable/bg_profil"
     tools:context=".Activity.berandaActivity">
 
     <androidx.viewpager.widget.ViewPager
@@ -19,10 +20,8 @@
             app:tabIconTint="@color/cardview_light_background"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:background="@color/myColor"
-            android:foregroundGravity="top"
+            android:foregroundGravity="bottom"
             android:theme="@style/CustomTab"
-            app:tabBackground="@color/myColor"
             app:tabIndicator="@android:color/white"
             app:tabIndicatorColor="@android:color/white" />
 

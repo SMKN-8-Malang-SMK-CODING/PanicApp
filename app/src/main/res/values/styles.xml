@@ -20,7 +20,7 @@
         <item name="tabIndicatorColor">@android:color/white</item>
         <item name="tabRippleColor">@color/colorPrimary</item>
         <item name="tabIndicatorHeight">3dp</item>
-        <item name="tabBackground">@color/myColor</item>
+        <item name="tabBackground">@drawable/bg_tab_layout</item>
         <item name="tabSelectedTextColor">@color/cardview_light_background</item>
         <item name="tabTextAppearance">@color/cardview_light_background</item>
         <item name="tabIndicatorGravity">@android:integer/config_shortAnimTime</item>

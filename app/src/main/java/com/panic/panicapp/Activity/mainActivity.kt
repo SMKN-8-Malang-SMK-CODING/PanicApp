@@ -91,7 +91,7 @@ class mainActivity : AppCompatActivity() {
     }
 
     private fun moveToBeranda() {
-        Toast.makeText(this, "Selamat Datang ${auth.currentUser?.uid}", Toast.LENGTH_SHORT)
+        Toast.makeText(this, "Selamat Datang ${auth.currentUser?.displayName}", Toast.LENGTH_SHORT)
             .show()
         val intent = Intent(this, berandaActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK

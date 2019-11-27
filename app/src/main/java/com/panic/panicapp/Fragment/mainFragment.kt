@@ -1,6 +1,5 @@
 package com.panic.panicapp.Fragment
 
-import android.animation.ObjectAnimator
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
@@ -11,17 +10,13 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.google.android.gms.location.FusedLocationProviderClient
-import com.google.android.gms.location.LocationCallback
-import com.google.common.collect.ComparisonChain.start
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.storage.FirebaseStorage
 import com.panic.panicapp.Activity.mainActivity
 import com.panic.panicapp.Activity.profilUpdate
-import com.panic.panicapp.Activity.settingActivity
 import com.panic.panicapp.Databases.addLaporan
 import com.panic.panicapp.R
-import kotlinx.android.synthetic.main.dialog_kebakaran.*
 import kotlinx.android.synthetic.main.dialog_kebakaran.view.*
 import kotlinx.android.synthetic.main.fragment_main.*
 import kotlinx.android.synthetic.main.laporan_dialog.view.*
@@ -41,61 +36,24 @@ class mainFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_main, container, false)
     }
 
+    val storage = FirebaseStorage.getInstance().reference
     val db = FirebaseFirestore.getInstance()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         foto_profil.setOnClickListener {
-
-            side_bar_menu.animate().apply {
-                duration = 2000
-                x(0f)
-                y(0f)
-                alpha(1f)
-                start()
-            }
-
-            side_bar_menu.visibility = View.VISIBLE
-
-            close_side_menu.setOnClickListener {
-                side_bar_menu.visibility = View.GONE
-
-                side_bar_menu.animate().apply {
-                    duration = 2000
-                    x(-100f)
-                    y(0f)
-                    alpha(0.6f)
-                    start()
-                }
-
-            }
-
-            menu_utama.setOnClickListener {
-                side_bar_menu.visibility = View.GONE
-            }
-
-            edt_profil.setOnClickListener {
-                side_bar_menu.visibility = View.GONE
-                side_bar_menu.animate().apply {
-                    duration = 2000
-                    x(-100f)
-                    y(0f)
-                    alpha(0.6f)
-                    start()
-                }
-
-
                 val intent = Intent(context, profilUpdate::class.java)
                 startActivity(intent)
+        }
+
+        db.collection("user_phone").document("${currentUser?.uid}").get().addOnSuccessListener {
+            if(it.exists()) {
+                user_telepone.text = it.getString("phone_number").toString()
             }
         }
 
-
-
         user_name.text = currentUser?.displayName.toString()
         Glide.with(context).load(currentUser?.photoUrl).apply(RequestOptions()).into(foto_profil)
-
-
 
         logoutTab.setOnClickListener {
             if (currentUser != null) {
@@ -133,12 +91,14 @@ class mainFragment : Fragment() {
         mDialogView.btnSubmitKebakaran.setOnClickListener {
             val username = user_name.text.toString()
             val lokasi = lokasi_user.text.toString()
+            //val ref = storage.child("user_photo/${currentUser?.uid}.jpg")
             mAlertDialog.dismiss()
             db.collection("laporan").add(
                 addLaporan(
                     username,
                     lokasi,
-                    judul
+                    judul,
+                    currentUser?.photoUrl.toString()
                 )
             )
                 .addOnSuccessListener {

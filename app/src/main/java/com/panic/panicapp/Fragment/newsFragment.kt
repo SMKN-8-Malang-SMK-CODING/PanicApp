@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.FirebaseFirestore
@@ -25,8 +26,7 @@ import kotlinx.android.synthetic.main.fragment_profil.*
 class newsFragment : Fragment() {
 
     private val db = FirebaseFirestore.getInstance()
-
-    val myAdapter = MyRecyclerAdapter()
+    lateinit var myAdapter: MyRecyclerAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,6 +41,28 @@ class newsFragment : Fragment() {
 
         val laporan = db.collection("laporan")
 
+        myAdapter = MyRecyclerAdapter(this.context!!)
+
+        var menuView = false
+
+
+
+        menu.setOnMenuToggleListener {
+            if (menuView == false) {
+                menuView = true
+                bg_text_1.visibility = View.VISIBLE
+                bg_text_2.visibility = View.VISIBLE
+                bg_text_3.visibility = View.VISIBLE
+            } else {
+                menuView = false
+                bg_text_1.visibility = View.GONE
+                bg_text_2.visibility = View.GONE
+                bg_text_3.visibility = View.GONE
+
+            }
+
+
+        }
 
         myRecyclerView.apply {
             layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
@@ -50,17 +72,34 @@ class newsFragment : Fragment() {
         }
 
 
+
         laporan.addSnapshotListener { _, e ->
             if (e != null) {
                 Log.w(TAG, "Listen failed.", e)
                 return@addSnapshotListener
             }
-
-            laporan.orderBy("waktu",Query.Direction.DESCENDING).get().addOnSuccessListener {
+            laporan.orderBy("waktu", Query.Direction.DESCENDING).get().addOnSuccessListener {
                 val dataList: List<dataList> = it!!.toObjects(dataList::class.java)
 
                 myAdapter.addListUser(dataList)
             }
+
+            menu_sort_waktu.setOnClickListener {
+                laporan.orderBy("waktu", Query.Direction.DESCENDING).get().addOnSuccessListener {
+                    val dataList: List<dataList> = it!!.toObjects(dataList::class.java)
+
+                    myAdapter.addListUser(dataList)
+                }
+            }
+            menu_sort_nama.setOnClickListener {
+                laporan.orderBy("nama_pelapor", Query.Direction.ASCENDING).get()
+                    .addOnSuccessListener {
+                        val dataList: List<dataList> = it!!.toObjects(dataList::class.java)
+
+                        myAdapter.addListUser(dataList)
+                    }
+            }
+
         }
 
 

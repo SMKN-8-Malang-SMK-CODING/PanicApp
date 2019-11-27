@@ -10,7 +10,7 @@ import com.panic.panicapp.Activity.mainActivity
 class splashActivity : AppCompatActivity() {
     private var mDelayHandler: Handler? = null
 
-    private val SPLASH_DELAY: Long = 500
+    private val SPLASH_DELAY: Long = 400
 
     internal val mRunnable: Runnable = Runnable {
         if (!isFinishing) {

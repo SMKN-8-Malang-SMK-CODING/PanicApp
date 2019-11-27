@@ -1,19 +1,26 @@
 package com.panic.panicapp.Adapter
 
+import android.app.Activity
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
+import com.google.firebase.auth.FirebaseAuth
 import com.panic.panicapp.Databases.dataList
 import com.panic.panicapp.Function.NumberFormatter
 import com.panic.panicapp.R
 import kotlinx.android.synthetic.main.layout_recycler.view.*
 
-class MyRecyclerAdapter :
+class MyRecyclerAdapter(private val context: Context) :
     RecyclerView.Adapter<MyRecyclerAdapter.ViewHolder>() {
     val listUser = ArrayList<dataList>()
+    val currentUser = FirebaseAuth.getInstance().currentUser
 
     fun addListUser(users: List<dataList>) {
         listUser.clear()
@@ -39,6 +46,7 @@ class MyRecyclerAdapter :
             holder.textViewNama.text = user.nama_pelapor
             holder.textViewAlamat.text = user.lokasi
             holder.textViewTime.text = time
+            Glide.with(context).load(user.user_photo).apply(RequestOptions()).into(holder.imageView)
 
 
         } catch (e: KotlinNullPointerException) {
@@ -50,6 +58,7 @@ class MyRecyclerAdapter :
         val textViewNama: TextView = itemView.txtNama
         val textViewAlamat: TextView = itemView.txtAlamat
         val textViewTime: TextView = itemView.txtTime
+        val imageView: ImageView = itemView.image_profil_laporan
 
     }
 

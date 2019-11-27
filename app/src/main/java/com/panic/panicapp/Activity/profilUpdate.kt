@@ -60,26 +60,24 @@ class profilUpdate : AppCompatActivity() {
         load_update_profil.visibility = View.VISIBLE
         load_back_update_profil.visibility = View.VISIBLE
 
-        val phoneUser = db.collection("user_phone").document(currentUser?.uid.toString())
-
         val ref: StorageReference? = Storage.child("user_photo/${currentUser?.uid}.jpg")
-        val username = username_profil.text.toString()
-        val phonenumber = phone_number_profil.text.toString()
-
-        if (username.isEmpty() && phonenumber.isEmpty()) {
-            username_profil.error = "Harus Diisi"
-            phone_number_profil.error = "Harus Diisi"
-        }
-
-        phoneUser.set(
-            phoneUpdate(
-                phonenumber
-            )
-        )
-
 
         ref!!.putFile(filePath!!).addOnSuccessListener {
             ref.downloadUrl.addOnSuccessListener {
+                val phoneUser = db.collection("user_phone").document(currentUser?.uid.toString())
+                val username = username_profil.text.toString()
+                val phonenumber = phone_number_profil.text.toString()
+
+                if (username.isEmpty() && phonenumber.isEmpty()) {
+                    username_profil.error = "Harus Diisi"
+                    phone_number_profil.error = "Harus Diisi"
+                }
+
+                phoneUser.set(
+                    phoneUpdate(
+                        phonenumber
+                    )
+                )
 
                 val profilUpdates = UserProfileChangeRequest.Builder()
                     .setDisplayName(username)

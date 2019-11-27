@@ -6,15 +6,18 @@ import android.os.Bundle
 import android.view.WindowManager
 import android.widget.Toast
 import com.google.firebase.FirebaseException
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseAuthException
-import com.google.firebase.auth.UserProfileChangeRequest
+import com.google.firebase.auth.*
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.auth.FirebaseAuthCredentialsProvider
+import com.panic.panicapp.Databases.userNumber
 import com.panic.panicapp.R
 import kotlinx.android.synthetic.main.activity_register.*
 
 class registerActivity : AppCompatActivity() {
 
     private val auth = FirebaseAuth.getInstance()
+    private val db = FirebaseFirestore.getInstance()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +34,7 @@ class registerActivity : AppCompatActivity() {
             val username = regUsername.text.toString()
             val email = regEmail.text.toString()
             val password = regPassword.text.toString()
+            val user_phone = regHp.text.toString()
 
             auth.createUserWithEmailAndPassword(email, password).addOnSuccessListener {
                 Toast.makeText(this, "Berhasil Register ", Toast.LENGTH_SHORT).show()
@@ -43,7 +47,11 @@ class registerActivity : AppCompatActivity() {
                             .setDisplayName(username)
                             .build()
 
-
+                    db.collection("user_phone").document(currentUser?.uid.toString()).set(
+                        userNumber(
+                            user_phone
+                        )
+                    )
                     currentUser?.updateProfile(profileUpdate)?.addOnSuccessListener {
                         Toast.makeText(this, "Hi! $username", Toast.LENGTH_SHORT).show()
 
