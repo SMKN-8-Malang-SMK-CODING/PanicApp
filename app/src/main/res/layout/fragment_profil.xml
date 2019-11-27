@@ -1,22 +1,160 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:paddingBottom="20dp"
+        android:text="Kejadian Hari ini"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/myRecyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.01" />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/myRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="2dp"
-        android:overScrollMode="never">
+        android:layout_height="630dp"
+        android:overScrollMode="never"
+        android:paddingTop="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
 
     </androidx.recyclerview.widget.RecyclerView>
 
+    <View
+        android:visibility="gone"
+        android:id="@+id/bg_text_1"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="28dp"
+        android:background="@android:color/white"
+        android:elevation="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/menu" />
 
-</LinearLayout>
+    <View
+        android:visibility="gone"
+        android:id="@+id/bg_text_2"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="40dp"
+        android:background="@android:color/white"
+        android:elevation="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bg_text_1" />
+
+    <View
+        android:visibility="gone"
+        android:id="@+id/bg_text_3"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="52dp"
+        android:background="@android:color/white"
+        android:elevation="3dp"
+        app:layout_constraintEnd_toEndOf="@+id/bg_text_2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bg_text_2" />
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:elevation="4dp"
+        android:id="@+id/menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="@color/myColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.917"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.936"
+        app:menu_animationDelayPerItem="50"
+        app:menu_backgroundColor="@android:color/transparent"
+        app:menu_buttonSpacing="0dp"
+        app:menu_colorNormal="@color/myColor"
+        app:menu_colorPressed="@android:color/holo_orange_light"
+        app:menu_colorRipple="#99FFFFFF"
+        app:menu_fab_hide_animation="@anim/fab_scale_down"
+        app:menu_fab_label="Sortir"
+        app:menu_fab_show_animation="@anim/fab_scale_up"
+        app:menu_fab_size="normal"
+        app:menu_icon="@drawable/ic_sort_black_24dp"
+        app:menu_labels_colorNormal="#000"
+        app:menu_labels_colorPressed="@color/myColor"
+        app:menu_labels_colorRipple="@color/myColor"
+        app:menu_labels_cornerRadius="3dp"
+        app:menu_labels_ellipsize="marquee"
+        app:menu_labels_hideAnimation="@anim/fab_slide_out_to_left"
+        app:menu_labels_margin="0dp"
+        app:menu_labels_maxLines="-1"
+        app:menu_labels_padding="8dp"
+        app:menu_labels_paddingBottom="4dp"
+        app:menu_labels_paddingLeft="8dp"
+        app:menu_labels_paddingRight="8dp"
+        app:menu_labels_paddingTop="4dp"
+        app:menu_labels_position="left"
+        app:menu_labels_showAnimation="@anim/fab_slide_in_from_right"
+        app:menu_labels_showShadow="true"
+        app:menu_labels_singleLine="true"
+        app:menu_labels_style="@string/common_google_play_services_enable_button"
+        app:menu_labels_textColor="@color/myColor"
+        app:menu_labels_textSize="14sp"
+        app:menu_openDirection="up"
+        app:menu_shadowColor="@color/myColor"
+        app:menu_shadowRadius="4dp"
+        app:menu_shadowXOffset="1dp"
+        app:menu_shadowYOffset="3dp"
+        app:menu_showShadow="true">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/menu_sort_waktu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_timer_black_24dp"
+            app:fab_colorNormal="@color/myColor"
+            app:fab_colorPressed="@android:color/holo_orange_light"
+            app:fab_label="Sortir berdasar waktu"
+            app:fab_size="normal" />
+
+        <com.github.clans.fab.FloatingActionButton
+
+            android:id="@+id/menu_sort_nama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_location_on_black_24dp"
+            app:fab_colorNormal="@color/myColor"
+            app:fab_colorPressed="@android:color/holo_orange_light"
+            app:fab_label="Sortir berdasar nama"
+            app:fab_size="normal" />
+
+    </com.github.clans.fab.FloatingActionMenu>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.panic.panicapp">
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
-        android:icon="@drawable/panic_logo_android"
+        android:icon="@drawable/panic_logo_rectangle"
         android:label="@string/app_name"
         android:roundIcon="@drawable/panic_logo_rounded"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.Tema">
-        <activity android:name=".Beranda" />
-        <activity android:name=".settingActivity" />
+        <activity android:name=".Activity.profilUpdate" />
+        <activity android:name=".Activity.registerActivity" />
+        <activity android:name=".Activity.berandaActivity" />
         <activity android:name=".splashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,8 +25,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".Activity.mainActivity"
             android:screenOrientation="portrait" />
     </application>
+
 
 </manifest>

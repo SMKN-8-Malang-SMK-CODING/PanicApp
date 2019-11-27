@@ -1,164 +1,368 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:textAlignment="center"
+    android:background="@android:color/white"
     android:orientation="vertical"
-    tools:context=".MainFragment">
+    android:textAlignment="center"
+    tools:context=".Fragment.mainFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+
     <FrameLayout
+        android:id="@+id/side_bar_menu"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:elevation="3dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/close_side_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="260dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_close_black_24dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="70dp"
+            android:background="@android:color/transparent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/edt_profil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/cardview_shadow_end_color"
+                android:padding="20dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/bg_1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:text="Edit profil"
+                    android:textColor="@android:color/background_dark"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/bantuanApp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/cardview_shadow_end_color"
+                android:padding="20dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/bg_2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:text="Bantuan Aplikasi"
+                    android:textColor="@android:color/background_dark"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/setting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/cardview_shadow_end_color"
+                android:padding="20dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/bg_4" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:text="Setting"
+                    android:textColor="@android:color/background_dark"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/background_light" />
+
+            <LinearLayout
+                android:id="@+id/hubungiApp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/cardview_shadow_end_color"
+                android:padding="20dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/bg_3" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:text="Hubungi kami"
+                    android:textColor="@android:color/background_dark"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/background_light" />
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/menu_utama"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:layout_marginTop="0dp"
-        android:padding="0dp"
-        >
+        android:elevation="1dp"
+        android:orientation="vertical"
+        android:padding="0dp">
 
         <FrameLayout
+            android:elevation="2dp"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:background="@drawable/flat_bg">
-
+            android:layout_height="wrap_content">
+            <ImageView
+                android:adjustViewBounds="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/bg_profil"/>
         </FrameLayout>
 
-        <FrameLayout
+        <LinearLayout
+            android:elevation="3dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="200dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+           >
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="510dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="50dp"
-                android:layout_marginEnd="10dp"
-                android:elevation="10dp"
-                android:paddingTop="90dp"
-                android:paddingBottom="20dp"
-                app:cardBackgroundColor="@color/cardview_light_background"
-                app:cardCornerRadius="25dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+            <de.hdodenhof.circleimageview.CircleImageView
+                app:civ_border_color="@color/myColor"
+                app:civ_border_width="1dp"
+                android:id="@+id/foto_profil"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_marginStart="30dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg_orang" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="40dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/user_name"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:gravity="center">
-
-                    <ImageView
-                        android:id="@+id/imgProfil"
-                        android:layout_width="110dp"
-                        android:layout_height="110dp"
-                        android:adjustViewBounds="true"
-                        android:src="@drawable/bg_orang" />
-
-                </LinearLayout>
-
+                    android:layout_margin="5dp"
+                    android:text="Jhon Doe"
+                    android:textColor="@android:color/white"
+                    android:textSize="20dp" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:src="@drawable/ic_location_on_black_24dp" />
+
+                    <TextView
+                        android:id="@+id/lokasi_user"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Jl.Teluk Pacitan"
+                        android:textColor="@android:color/white"
+                        android:textSize="18dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/user_telepone"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="120dp"
-                    android:gravity="center"
+                    android:layout_margin="5dp"
+                    android:text="Phone Number"
+                    android:textColor="@android:color/white"
+                    android:textSize="18dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:elevation="1dp"
+            android:layout_width="match_parent"
+            android:layout_height="430dp"
+            android:layout_gravity="bottom"
+            android:orientation="vertical"
+            android:padding="25dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
                     android:orientation="vertical"
-                    android:padding="15dp">
+                    android:id="@+id/kebakaranTab"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:layout_margin="15dp"
+
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
+                        android:src="@drawable/api" />
+
+                    <TextView
+                        android:id="@+id/kebakaran_judul"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Kebakaran"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:id="@+id/kriminalTab"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:layout_margin="15dp"
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
+                        android:src="@drawable/borgol" />
+
+                    <TextView
+                        android:id="@+id/kejahatan_judul"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Kejahatan"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:id="@+id/kecelakaanTab"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:layout_margin="15dp"
+
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
+                        android:src="@drawable/p_tiga_k" />
+
+                    <TextView
+                        android:id="@+id/kecelakaan_judul"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Kecelakaan"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:id="@+id/logoutTab"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:layout_margin="15dp"
+                    android:layout_weight="1"
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
+                        android:src="@drawable/logout" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:text="Alvin Ferdian Akbar"
-                        android:textColor="@color/cardview_dark_background"
-                        android:textSize="25dp" />
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
-                            android:src="@drawable/lokasi_bg" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="10dp"
-                            android:text="Jl.Teluk Pacitan No.1"
-                            android:textColor="@color/colorAccent"
-                            android:textSize="18dp" />
-                    </LinearLayout>
+                        android:layout_gravity="center_horizontal"
+                        android:text="Logout"
+                        android:textSize="18sp" />
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="265dp"
-                    android:layout_marginEnd="20dp"
-                    android:background="@color/cardview_light_background"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-
-                        android:weightSum="2">
-
-                        <ImageView
-                            android:id="@+id/kebakaranTab"
-                            android:layout_width="110dp"
-                            android:layout_height="110dp"
-                            android:layout_marginStart="10dp"
-                            android:layout_weight="1"
-                            android:src="@drawable/api_bg" />
-
-                        <ImageView
-                            android:id="@+id/kriminalTab"
-                            android:layout_width="110dp"
-                            android:layout_height="110dp"
-                            android:layout_marginStart="30dp"
-                            android:layout_weight="1"
-                            android:src="@drawable/borgol_bg" />
+            </LinearLayout>
 
 
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:weightSum="2">
-
-                        <ImageView
-                            android:id="@+id/kecelakaanTab"
-                            android:layout_width="110dp"
-                            android:layout_height="110dp"
-                            android:layout_marginStart="10dp"
-                            android:layout_weight="1"
-                            android:src="@drawable/sehat_bg" />
-
-                        <ImageView
-                            android:id="@+id/settingTab"
-                            android:layout_width="110dp"
-                            android:layout_height="110dp"
-                            android:layout_marginStart="30dp"
-
-                            android:layout_weight="1"
-                            android:src="@drawable/setting_bg" />
-
-                    </LinearLayout>
-
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-        </FrameLayout>
+        </LinearLayout>
     </FrameLayout>
 
 
-
-</LinearLayout>
+</FrameLayout>

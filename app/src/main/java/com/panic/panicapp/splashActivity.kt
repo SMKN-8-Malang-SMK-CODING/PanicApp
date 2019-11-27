@@ -4,16 +4,17 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
+import com.panic.panicapp.Activity.mainActivity
 
 
 class splashActivity : AppCompatActivity() {
-    private var mDelayHandler : Handler? = null
+    private var mDelayHandler: Handler? = null
 
-    private val SPLASH_DELAY : Long = 500
+    private val SPLASH_DELAY: Long = 400
 
-    internal val mRunnable: Runnable = Runnable{
-        if(!isFinishing){
-            val intent = Intent(applicationContext, MainActivity::class.java)
+    internal val mRunnable: Runnable = Runnable {
+        if (!isFinishing) {
+            val intent = Intent(applicationContext, mainActivity::class.java)
 
             startActivity(intent)
 
@@ -33,7 +34,7 @@ class splashActivity : AppCompatActivity() {
 
     override fun onDestroy() {
 
-        if(mDelayHandler != null){
+        if (mDelayHandler != null) {
             mDelayHandler!!.removeCallbacks(mRunnable)
         }
         super.onDestroy()

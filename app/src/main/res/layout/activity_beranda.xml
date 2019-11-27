@@ -5,25 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@style/AppTheme.Tema"
-    tools:context=".Beranda">
+    android:background="@drawable/bg_profil"
+    tools:context=".Activity.berandaActivity">
 
     <androidx.viewpager.widget.ViewPager
-        tools:ignore="MissingConstraints"
         android:id="@+id/vp_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints">
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab_main"
+            app:tabIconTint="@color/cardview_light_background"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorAccent"
-            android:foregroundGravity="top"
+            android:layout_height="60dp"
+            android:foregroundGravity="bottom"
             android:theme="@style/CustomTab"
-            app:tabBackground="@color/colorAccent"
-            app:tabIndicator="@android:color/transparent"
-            app:tabIndicatorColor="@color/colorAccent" />
+            app:tabIndicator="@android:color/white"
+            app:tabIndicatorColor="@android:color/white" />
 
 
     </androidx.viewpager.widget.ViewPager>

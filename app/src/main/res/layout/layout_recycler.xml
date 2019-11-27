@@ -9,11 +9,11 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/kejadian_card"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20sp"
-        android:layout_marginVertical="3dp"
-        android:paddingHorizontal="20dp"
-        app:cardCornerRadius="15dp"
+        android:layout_height="200dp"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginVertical="2dp"
+        android:paddingHorizontal="5dp"
+        app:cardCornerRadius="6dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -25,50 +25,80 @@
             android:id="@+id/txtKejadian"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="5dp"
             android:gravity="center"
-            android:background="@color/colorAccent"
-            android:textColor="@color/cardview_dark_background"
+            android:padding="5dp"
             android:text="Kebakaran"
+            android:textColor="@color/cardview_dark_background"
             android:textSize="20sp" />
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="40dp"
+            android:background="@color/myColor" />
 
-
-        <TextView
-            android:id="@+id/txtNama"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
+        <LinearLayout
+            android:weightSum="2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="1dp"
             android:layout_marginTop="45dp"
-            android:text="Alvin Ferdian Akbar"
-            android:textSize="20sp" />
+            android:orientation="horizontal"
+            android:padding="10dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="83dp">
+
+            <TextView
+                android:layout_weight="1"
+                android:id="@+id/txtNama"
+                android:layout_marginStart="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alvin Ferdian Akbar"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_weight="1"
+                android:id="@+id/txtTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:text="Time"
+                android:textSize="20sp" />
+        </LinearLayout>
 
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginStart="20dp"
+            android:layout_marginTop="90dp"
             android:orientation="horizontal"
             android:padding="20dp"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="83dp">
 
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/image_profil_laporan"
+                android:src="@drawable/bg_orang"
+                android:layout_width="60dp"
+                android:layout_height="60dp"/>
+
             <ImageView
+                android:layout_marginTop="15dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="30dp"
-                android:src="@drawable/lokasi_bg" />
+                android:layout_marginStart="40dp"
+                android:src="@drawable/ic_location_on_orange" />
 
             <TextView
+
                 android:id="@+id/txtAlamat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="20dp"
                 android:text="Jl.inajadulu"
-                android:textColor="@color/colorAccent"
+                android:textColor="@color/myColor"
                 android:textSize="18sp" />
 
 
