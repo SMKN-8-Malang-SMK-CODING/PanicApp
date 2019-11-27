@@ -16,8 +16,11 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
+import com.panic.panicapp.Databases.phoneUpdate
+import com.panic.panicapp.Databases.userNumber
 import com.panic.panicapp.R
 import kotlinx.android.synthetic.main.activity_profil_update.*
 import java.io.File
@@ -26,8 +29,9 @@ import java.io.IOException
 
 class profilUpdate : AppCompatActivity() {
 
+    private val db = FirebaseFirestore.getInstance()
     private val auth = FirebaseAuth.getInstance()
-    private val currentUser = FirebaseAuth.getInstance().currentUser
+    private val currentUser = auth.currentUser
     private val PICK_IMAGE_REQUEST = 71
     private val PERMISSION_CODE = 1001;
     private var filePath: Uri? = null
@@ -56,10 +60,23 @@ class profilUpdate : AppCompatActivity() {
         load_update_profil.visibility = View.VISIBLE
         load_back_update_profil.visibility = View.VISIBLE
 
+        val phoneUser = db.collection("user_phone").document(currentUser?.uid.toString())
+
         val ref: StorageReference? = Storage.child("user_photo/${currentUser?.uid}.jpg")
         val username = username_profil.text.toString()
+        val phonenumber = phone_number_profil.text.toString()
 
-        if (username.isEmpty()) username_profil.error = "Harus Diisi"
+        if (username.isEmpty() && phonenumber.isEmpty()) {
+            username_profil.error = "Harus Diisi"
+            phone_number_profil.error = "Harus Diisi"
+        }
+
+        phoneUser.set(
+            phoneUpdate(
+                phonenumber
+            )
+        )
+
 
         ref!!.putFile(filePath!!).addOnSuccessListener {
             ref.downloadUrl.addOnSuccessListener {
