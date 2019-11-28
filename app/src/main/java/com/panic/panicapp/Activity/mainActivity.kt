@@ -40,21 +40,20 @@ class mainActivity : AppCompatActivity() {
             moveToBeranda()
         } else {
             btnLogin.setOnClickListener {
-                load_backLogin?.visibility = View.VISIBLE
-                load_login.visibility = View.VISIBLE
 
                 val username = edtUsername.text.toString()
                 val password = edtPassword.text.toString()
 
-                if (username.isEmpty()) {
-                    edtUsername.error = "Email Harus Diisi"
-                }
-                if (password.isEmpty()) {
-                    edtPassword.error = "Password Harus Diisi"
-                }
+                if(username.isEmpty()) edtUsername.error = "Email Harus Diisi"
+                if(password.isEmpty()) edtPassword.error = "Password Harus Diisi"
+                if(password.isEmpty() || username.isEmpty()) return@setOnClickListener
+
+                load_backLogin?.visibility = View.VISIBLE
+                load_login.visibility = View.VISIBLE
 
                 try {
                     auth.signInWithEmailAndPassword(username, password).addOnSuccessListener {
+
                         moveToBeranda()
 
                         load_backLogin.visibility = View.GONE
