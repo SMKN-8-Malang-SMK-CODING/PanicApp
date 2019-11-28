@@ -9,9 +9,6 @@
     android:textAlignment="center"
     tools:context=".Fragment.mainFragment">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
 
     <FrameLayout
@@ -368,6 +365,5 @@
 
         </LinearLayout>
     </FrameLayout>
-    </ScrollView>
 
 </FrameLayout>
