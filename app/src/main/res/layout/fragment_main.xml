@@ -218,7 +218,8 @@
                         android:id="@+id/lokasi_user"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="14dp"
                         android:text="Jl.Teluk Pacitan"
                         android:textColor="@android:color/white"
                         android:textSize="18dp" />
